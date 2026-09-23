@@ -1,23 +1,71 @@
 aid: bmi
+
 name: BMI
-description: 'BMI is a company surfaced via the API Evangelist harvest backlog (source: music) and added
-  to the network as a stub for full-pipeline profiling.'
+
+description: 'Broadcast Music, Inc. (BMI) is the largest performing rights organization in the United States, representing songwriters, composers and music publishers. It collects and distributes royalties for public performances of music, offers licensing services to businesses, and provides resources, advocacy, and career development for music creators. BMI also runs programs like Health Connect, Spark, and AI & Copyright initiatives to support its members.'
+
 url: https://raw.githubusercontent.com/api-evangelist/bmi/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:music
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-23'
+
 modified: '2026-09-23'
+
 tags:
 - Company
-apis: []
+- Music
+- Royalties
+- Licensing
+- Advocacy
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: WellKnown
+  url: well-known/bmi-well-known.yml
+- type: Hosts
+  url: hosts/bmi-hosts.yml
+- type: Vendors
+  url: vendors/bmi-vendors.yml
+- type: DomainSecurity
+  url: security/bmi-domain-security.yml
 - type: Website
   url: https://bmi.com/
+
+- type: PrivacyPolicy
+  url: https://www.bmi.com/legal/privacy-policy
+- type: TermsOfService
+  url: https://www.bmi.com/legal/terms-and-conditions-of-use
+- type: Contact
+  url: https://www.bmi.com/contact-us
+- type: About
+  url: https://www.bmi.com/about
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI, AsyncAPI, GraphQL, or other machine-readable contract was found at the API host or documentation pages.
+  evidence:
+    - url: https://api.bmi.com/openapi.json
+      status: 000
+  checked: 2026-09-23
+x-enrichment:
+  date: '2026-09-23'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
